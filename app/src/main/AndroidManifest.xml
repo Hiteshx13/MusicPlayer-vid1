@@ -160,6 +160,8 @@
         <activity android:name=".activities.DriveModeActivity" />
         <activity android:name=".activities.PermissionActivity" />
         <activity android:name=".activities.LockScreenActivity" />
+        <activity android:name=".activities.VideoFolderListActivity" />
+        <activity android:name=".activities.VideoListActivity" />
 
         <activity
             android:name=".appshortcuts.AppShortcutLauncherActivity"

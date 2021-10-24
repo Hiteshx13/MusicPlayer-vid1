@@ -3,13 +3,10 @@ package code.name.monkey.retromusic.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import code.name.monkey.retromusic.R
 import code.name.monkey.retromusic.activities.base.AbsBaseActivity
 import code.name.monkey.retromusic.databinding.ActivityPlayerselectBinding
-import code.name.monkey.retromusic.videoplayer.player.PlayerActivity
 
 class PlayerSelectActivity : AbsBaseActivity() {
 var binding: ActivityPlayerselectBinding?=null
@@ -28,7 +25,7 @@ var binding: ActivityPlayerselectBinding?=null
 //
         binding?.ivMusic?.setOnClickListener { launchActivity(MainActivity.getIntent(this)) }
         binding?.ivVideo?.setOnClickListener {
-            var intent = Intent(this, PlayerActivity::class.java)
+            var intent = Intent(this, VideoFolderListActivity::class.java)
             launchActivity(intent)
 //        }
 //
