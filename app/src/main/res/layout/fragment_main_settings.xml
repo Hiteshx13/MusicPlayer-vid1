@@ -18,7 +18,9 @@
             style="@style/MaterialCardViewStroke"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_margin="4dp"
+
             app:cardCornerRadius="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_theme_palette"
-            app:settingListItemIconColor="@color/md_blue_A400"
+            app:settingListItemIconColor="@color/md_deep_purple_A400"
             app:settingListItemText="@string/general_settings_summary"
             app:settingListItemTitle="@string/general_settings_title" />
 
@@ -110,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_play_circle_filled"
-            app:settingListItemIconColor="@color/md_red_A400"
+            app:settingListItemIconColor="@color/md_deep_purple_A400"
             app:settingListItemText="@string/now_playing_summary"
             app:settingListItemTitle="@string/now_playing" />
 
@@ -127,6 +129,7 @@
             android:id="@+id/personalizeSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:settingListItemIcon="@drawable/ic_hdr_strong"
             app:settingListItemIconColor="@color/md_teal_A400"
             app:settingListItemText="@string/personalize_settings_summary"
@@ -136,6 +139,7 @@
         <code.name.monkey.retromusic.views.SettingListItemView
             android:id="@+id/imageSettings"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_image"
             app:settingListItemIconColor="@color/md_deep_orange_A400"
@@ -145,6 +149,7 @@
         <code.name.monkey.retromusic.views.SettingListItemView
             android:id="@+id/notificationSettings"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_notifications_active"
             app:settingListItemIconColor="@color/md_yellow_A400"
@@ -155,6 +160,7 @@
             android:id="@+id/otherSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:settingListItemIcon="@drawable/ic_testing"
             app:settingListItemIconColor="@color/md_indigo_A400"
             app:settingListItemText="@string/other_settings_summary"
@@ -165,6 +171,7 @@
             android:id="@+id/aboutSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:settingListItemIcon="@drawable/ic_info_outline"
             app:settingListItemIconColor="@color/md_light_green_A400"
             app:settingListItemText="@string/about_settings_summary"

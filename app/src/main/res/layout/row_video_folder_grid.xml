@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/rlRoot"
+    tools:background="@color/color_blue"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
@@ -10,22 +11,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_blue" />
+
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvVideoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:maxLines="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="15dp"
             android:minLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:text="Demo folder" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white" />
     </LinearLayout>
 </RelativeLayout>

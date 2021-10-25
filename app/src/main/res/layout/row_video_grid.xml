@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlRoot"
     android:layout_width="match_parent"
+    tools:background="@color/color_blue"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -29,7 +30,7 @@
             android:layout_marginBottom="15dp"
             android:maxLines="2"
             android:minLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             tools:text="Demo folder dshsd h hhd hdh dhd d  dd djh dhj dj jdhj dhjd jdj hdh hd  dhjj hdhj djhd jhd jhd jhd d h jh djh dj" />

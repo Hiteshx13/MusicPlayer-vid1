@@ -16,7 +16,7 @@ class SplashActivity : AbsBaseActivity() {
 
         Handler().postDelayed(Runnable {
             launchActivity(PlayerSelectActivity.getIntent(this))
-
+            finish()
         }, SPLASH_TIME_OUT.toLong())
 
     }
