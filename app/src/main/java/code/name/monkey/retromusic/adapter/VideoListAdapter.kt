@@ -14,11 +14,10 @@
  */
 package code.name.monkey.retromusic.adapter
 
-import android.R.attr.path
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.ThumbnailUtils
-import android.net.Uri
+import android.os.FileUtils
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
@@ -28,20 +27,31 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
+import code.name.monkey.appthemehelper.util.ATHUtil
 import code.name.monkey.retromusic.R
+import code.name.monkey.retromusic.glide.GlideApp
+import code.name.monkey.retromusic.glide.RetroGlideExtension
+import code.name.monkey.retromusic.glide.audiocover.AudioFileCover
 import code.name.monkey.retromusic.interfaces.IFolderClickListener
+import code.name.monkey.retromusic.util.FileUtil
+import code.name.monkey.retromusic.util.RetroUtil
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.signature.MediaStoreSignature
 import java.io.File
+import java.net.URI
 import java.util.*
 
 
 class VideoListAdapter(
      private val activity: AppCompatActivity,
-     var  VideoPath: ArrayList<String?>? = null,
+     var  VideoPath: ArrayList<String>? = null,
+     var listBitmap: ArrayList<Bitmap?>,
      var listener: IFolderClickListener
 ) : RecyclerView.Adapter<VideoListAdapter.ViewHolder>() {
 
     init {
         this.setHasStableIds(true)
+
     }
 
 
@@ -53,17 +63,24 @@ class VideoListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val url = VideoPath?.get(position) ?:""
-        holder.tvFolder?.text = url
-//        holder.ivImage?.setImageBitmap(getPreview(Uri.parse(url)))
+        holder.tvFolder?.text = FileUtil.getVideoName(url)
 //        val thumb = ThumbnailUtils.createVideoThumbnail(
-//            path,
-//            MediaStore.Images.Thumbnails.MINI_KIND
-//        )
-//
-//        val thumb: Bitmap = ThumbnailUtils.createVideoThumbnail(
 //            url,
 //            MediaStore.Images.Thumbnails.MINI_KIND
 //        )
+//        holder.ivImage?.setImageBitmap(listBitmap.get(position))
+        val iconColor = ATHUtil.resolveColor(activity, R.attr.colorControlNormal)
+        val error = RetroUtil.getTintedVectorDrawable(
+            activity, R.drawable.ic_file_music, iconColor
+        )
+        GlideApp.with(activity)
+            .load(url)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .error(error)
+            .placeholder(error)
+            .transition(RetroGlideExtension.getDefaultTransition())
+//            .signature(MediaStoreSignature("", file.lastModified(), 0))
+            .into(holder.ivImage!!)
     }
 
     override fun getItemCount(): Int {
@@ -93,16 +110,5 @@ class VideoListAdapter(
 
     }
 
-//    private fun getPreview(uri: Uri): Bitmap? {
-//        val image = File(uri)
-//        val bounds: BitmapFactory.Options = BitmapFactory.Options()
-//        bounds.inJustDecodeBounds = true
-//        BitmapFactory.decodeFile(image.getPath(), bounds)
-//        if (bounds.outWidth === -1 || bounds.outHeight === -1) return null
-//        val originalSize: Int =
-//            if (bounds.outHeight > bounds.outWidth) bounds.outHeight else bounds.outWidth
-//        val opts: BitmapFactory.Options = BitmapFactory.Options()
-//        //opts.inSampleSize = originalSize / THUMBNAIL_SIZE;
-//        return BitmapFactory.decodeFile(image.getPath(), opts)
-//    }
+
 }

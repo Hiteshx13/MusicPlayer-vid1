@@ -62,7 +62,7 @@ class SettingsActivity : AbsBaseActivity(), ColorCallback {
             R.id.otherSettingsFragment -> R.string.others
             R.id.personalizeSettingsFragment -> R.string.personalize
             R.id.themeSettingsFragment -> R.string.general_settings_title
-            R.id.aboutActivity -> R.string.action_about
+//            R.id.aboutActivity -> R.string.action_about
             else -> R.id.action_settings
         }
         return getString(idRes)

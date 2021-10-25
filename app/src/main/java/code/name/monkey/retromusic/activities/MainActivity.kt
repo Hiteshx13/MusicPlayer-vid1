@@ -30,6 +30,7 @@ import code.name.monkey.retromusic.extensions.extra
 import code.name.monkey.retromusic.extensions.findNavController
 import code.name.monkey.retromusic.fragments.base.AbsRecyclerViewFragment
 import code.name.monkey.retromusic.fragments.home.HomeFragment
+import code.name.monkey.retromusic.fragments.songs.SongsFragment
 import code.name.monkey.retromusic.helper.MusicPlayerRemote
 import code.name.monkey.retromusic.helper.SearchQueryHelper.getSongs
 import code.name.monkey.retromusic.model.CategoryInfo
@@ -101,7 +102,7 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
                     if (it is AbsRecyclerViewFragment<*, *>) {
                         it.scrollToTop()
                     }
-                    if (it is HomeFragment) {
+                    if (it is SongsFragment) {
                         it.scrollToTop()
                     }
                 }

@@ -40,9 +40,9 @@ class AboutFragment : Fragment(R.layout.fragment_about), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentAboutBinding.bind(view)
-        binding.aboutContent.cardOther.version.setSummary(getAppVersion())
-        setUpView()
-        loadContributors()
+//        binding.aboutContent.cardOther.version.setSummary(getAppVersion())
+//        setUpView()
+//        loadContributors()
     }
 
     private fun openUrl(url: String) {
@@ -52,22 +52,22 @@ class AboutFragment : Fragment(R.layout.fragment_about), View.OnClickListener {
         startActivity(i)
     }
 
-    private fun setUpView() {
-        binding.aboutContent.cardRetroInfo.appGithub.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.faqLink.setOnClickListener(this)
-        binding.aboutContent.cardSocial.telegramLink.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appRate.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appTranslation.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appShare.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.donateLink.setOnClickListener(this)
-        binding.aboutContent.cardSocial.instagramLink.setOnClickListener(this)
-        binding.aboutContent.cardSocial.twitterLink.setOnClickListener(this)
-        binding.aboutContent.cardOther.changelog.setOnClickListener(this)
-        binding.aboutContent.cardOther.openSource.setOnClickListener(this)
-        binding.aboutContent.cardSocial.pinterestLink.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.bugReportLink.setOnClickListener(this)
-        binding.aboutContent.cardSocial.websiteLink.setOnClickListener(this)
-    }
+//    private fun setUpView() {
+//        binding.aboutContent.cardRetroInfo.appGithub.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.faqLink.setOnClickListener(this)
+//        binding.aboutContent.cardSocial.telegramLink.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.appRate.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.appTranslation.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.appShare.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.donateLink.setOnClickListener(this)
+//        binding.aboutContent.cardSocial.instagramLink.setOnClickListener(this)
+//        binding.aboutContent.cardSocial.twitterLink.setOnClickListener(this)
+//        binding.aboutContent.cardOther.changelog.setOnClickListener(this)
+//        binding.aboutContent.cardOther.openSource.setOnClickListener(this)
+//        binding.aboutContent.cardSocial.pinterestLink.setOnClickListener(this)
+//        binding.aboutContent.cardRetroInfo.bugReportLink.setOnClickListener(this)
+//        binding.aboutContent.cardSocial.websiteLink.setOnClickListener(this)
+//    }
 
     override fun onClick(view: View) {
         when (view.id) {
@@ -107,17 +107,17 @@ class AboutFragment : Fragment(R.layout.fragment_about), View.OnClickListener {
             .startChooser()
     }
 
-    private fun loadContributors() {
-        val contributorAdapter = ContributorAdapter(emptyList())
-        binding.aboutContent.cardCredit.recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            itemAnimator = DefaultItemAnimator()
-            adapter = contributorAdapter
-        }
-        libraryViewModel.fetchContributors().observe(viewLifecycleOwner, { contributors ->
-            contributorAdapter.swapData(contributors)
-        })
-    }
+//    private fun loadContributors() {
+//        val contributorAdapter = ContributorAdapter(emptyList())
+//        binding.aboutContent.cardCredit.recyclerView.apply {
+//            layoutManager = LinearLayoutManager(requireContext())
+//            itemAnimator = DefaultItemAnimator()
+//            adapter = contributorAdapter
+//        }
+//        libraryViewModel.fetchContributors().observe(viewLifecycleOwner, { contributors ->
+//            contributorAdapter.swapData(contributors)
+//        })
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

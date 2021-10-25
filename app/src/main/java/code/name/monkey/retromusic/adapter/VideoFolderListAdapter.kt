@@ -22,9 +22,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
+import code.name.monkey.appthemehelper.util.ATHUtil
 import code.name.monkey.retromusic.R
+import code.name.monkey.retromusic.glide.GlideApp
+import code.name.monkey.retromusic.glide.RetroGlideExtension
 import code.name.monkey.retromusic.interfaces.IFolderClickListener
 import code.name.monkey.retromusic.model.VideoModel
+import code.name.monkey.retromusic.util.FileUtil
+import code.name.monkey.retromusic.util.RetroUtil
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.util.*
 
 /**
@@ -50,25 +56,27 @@ class VideoFolderListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val videoData = dataSet[position]
-        holder.tvFolder?.text = videoData.folderName
-//        loadGenreImage(genre, holder)
-    }
+        holder.tvFolder?.text = FileUtil.getVideoName(videoData.folderName)
 
-//    private fun loadGenreImage(genre: Genre, holder: VideoListAdapter.ViewHolder) {
-//        val genreSong = MusicUtil.songByGenre(genre.id)
-//        GlideApp.with(activity)
-//            .asBitmapPalette()
-//            .load(RetroGlideExtension.getSongModel(genreSong))
-//            .songCoverOptions(genreSong)
-//            .into(object : RetroMusicColoredTarget(holder.image!!) {
-//                override fun onColorReady(colors: MediaNotificationProcessor) {
-//                    setColors(holder, colors)
-//                }
-//            })
-//        // Just for a bit of shadow around image
-//        holder.image?.outlineProvider = ViewOutlineProvider.BOUNDS
-//    }
-//
+        if(videoData.videoPath.size>0) {
+
+
+            val iconColor = ATHUtil.resolveColor(activity, R.attr.colorControlNormal)
+            val error = RetroUtil.getTintedVectorDrawable(
+                activity, R.drawable.ic_file_music, iconColor
+            )
+//            GlideApp.with(activity)
+//                .load(url)
+//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                .error(error)
+//                .placeholder(error)
+//                .transition(RetroGlideExtension.getDefaultTransition())
+////            .signature(MediaStoreSignature("", file.lastModified(), 0))
+//                .into(holder.ivImage!!)
+        }else{
+
+        }
+    }
 
     override fun getItemCount(): Int {
         return dataSet.size

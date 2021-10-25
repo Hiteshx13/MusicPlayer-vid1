@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlRoot"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_blue" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/selectedImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvVideoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:maxLines="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:maxLines="2"
             android:minLines="1"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textStyle="bold"
-            tools:text="Demo folder" />
+            tools:text="Demo folder dshsd h hhd hdh dhd d  dd djh dhj dj jdhj dhjd jdj hdh hd  dhjj hdhj djhd jhd jhd jhd d h jh djh dj" />
     </LinearLayout>
 </RelativeLayout>

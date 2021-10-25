@@ -516,6 +516,12 @@ public class PlayerActivity extends Activity {
                 }
             }
         });
+
+
+        Uri uri=Uri.parse(getIntent().getStringExtra("video_path"));
+        mPrefs.updateMedia(this, uri, "");
+        mPrefs.updateSubtitle(uri);
+        initializePlayer();
     }
 
     @Override

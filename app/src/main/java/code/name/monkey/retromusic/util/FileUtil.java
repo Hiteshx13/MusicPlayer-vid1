@@ -258,4 +258,7 @@ public final class FileUtil {
       return file.getAbsoluteFile();
     }
   }
+  public static String getVideoName(String path){
+    return  path.substring(path.lastIndexOf("/")+1);
+  }
 }
