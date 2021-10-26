@@ -52,13 +52,13 @@ object AppRater {
             editor.putLong(DATE_FIRST_LAUNCH, dateFirstLaunch)
         }
 
-        // Wait at least n days before opening
-        if (launchCount >= LAUNCHES_UNTIL_PROMPT) {
-            if (System.currentTimeMillis() >= dateFirstLaunch + DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000) {
-                //showRateDialog(context, editor)
-                showPlayStoreReviewDialog(context, editor)
-            }
-        }
+//        // Wait at least n days before opening
+//        if (launchCount >= LAUNCHES_UNTIL_PROMPT) {
+//            if (System.currentTimeMillis() >= dateFirstLaunch + DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000) {
+//                //showRateDialog(context, editor)
+//                showPlayStoreReviewDialog(context, editor)
+//            }
+//        }
 
         editor.apply()
     }

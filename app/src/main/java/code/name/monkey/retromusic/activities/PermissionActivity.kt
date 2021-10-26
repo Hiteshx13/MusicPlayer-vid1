@@ -15,6 +15,7 @@
 package code.name.monkey.retromusic.activities
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
@@ -36,6 +37,12 @@ import code.name.monkey.retromusic.util.RingtoneManager
 class PermissionActivity : AbsMusicServiceActivity() {
     private lateinit var binding: ActivityPermissionBinding
 
+    companion object{
+        fun getIntent(context: Context): Intent {
+            var intent = Intent(context, PermissionActivity::class.java)
+            return intent
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPermissionBinding.inflate(layoutInflater)
@@ -61,7 +68,7 @@ class PermissionActivity : AbsMusicServiceActivity() {
         binding.finish.setOnClickListener {
             if (hasPermissions()) {
                 startActivity(
-                    Intent(this, MainActivity::class.java).addFlags(
+                    Intent(this, PlayerSelectActivity::class.java).addFlags(
                         Intent.FLAG_ACTIVITY_NEW_TASK or
                                 Intent.FLAG_ACTIVITY_CLEAR_TASK
                     )
@@ -75,7 +82,7 @@ class PermissionActivity : AbsMusicServiceActivity() {
         val color = ThemeStore.accentColor(this)
         val hexColor = String.format("#%06X", 0xFFFFFF and color)
         val appName = HtmlCompat.fromHtml(
-            "Hello there! <br>Welcome to <b>Retro <span  style='color:$hexColor';>Music</span></b>",
+            "<b><span  style='color:$hexColor';>PSM Media Player</span></b>",
             HtmlCompat.FROM_HTML_MODE_COMPACT
         )
         binding.appNameText.text = appName

@@ -66,7 +66,7 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
         setTaskDescriptionColorAuto()
         hideStatusBar()
         updateTabs()
-        AppRater.appLaunched(this)
+//        AppRater.appLaunched(this)
 
         setupNavigationController()
         if (!hasPermissions()) {
