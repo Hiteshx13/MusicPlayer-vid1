@@ -12,13 +12,13 @@ android {
     ndkVersion '21.4.7075529'
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 31
 
         renderscriptTargetApi 31//must match target sdk and build tools
         vectorDrawables.useSupportLibrary = true
 
-        applicationId "code.name.monkey.retromusic"
+        applicationId "code.psm.music.player"
         versionCode 10520
         versionName '5.0.0' + "_" + getDate()
 

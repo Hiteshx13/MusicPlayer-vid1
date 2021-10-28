@@ -58,11 +58,11 @@
 -keepclassmembers enum * { *; }
 -keepattributes *Annotation*, Signature, Exception
 -keepnames class androidx.navigation.fragment.NavHostFragment
--keepnames class code.name.monkey.retromusic.model.Home
+-keepnames class code.psm.music.player.model.Home
 -keep class * extends androidx.fragment.app.Fragment{}
 -keepnames class * extends android.os.Parcelable
 -keepnames class * extends java.io.Serializable
--keep class code.name.monkey.retromusic.network.model.** { *; }
--keep class code.name.monkey.retromusic.model.CategoryInfo { *; }
+-keep class code.psm.music.player.network.model.** { *; }
+-keep class code.psm.music.player.model.CategoryInfo { *; }
 -keep class com.google.android.material.bottomsheet.** { *; }
--keep class code.name.monkey.retromusic.Constants { *; }
+-keep class code.psm.music.player.Constants { *; }

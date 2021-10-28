@@ -24,6 +24,7 @@
         <item name="android:windowBackground">@color/window_color</item>
         <item name="android:scrollbars">none</item>
         <item name="dialogCornerRadius">16dp</item>
+        <item name="tint">@color/color_splash</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
@@ -176,8 +177,8 @@
     <style name="MaterialButtonTheme" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">6dp</item>
         <item name="iconGravity">textStart</item>
-        <item name="iconTint">?attr/colorControlNormal</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="iconTint">@color/color_splash</item>
+        <item name="android:textColor">@color/color_splash</item>
         <item name="android:textAppearance">@style/TextViewNormal</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:paddingTop">@dimen/button_padding_vertical</item>

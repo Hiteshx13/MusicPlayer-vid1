@@ -253,13 +253,13 @@
             android:layout_weight="3"
             android:orientation="horizontal">
 
-            <code.name.monkey.retromusic.equalizer.AnalogController
+            <code.psm.music.player.equalizer.AnalogController
                 android:id="@+id/controllerBass"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-            <code.name.monkey.retromusic.equalizer.AnalogController
+            <code.psm.music.player.equalizer.AnalogController
                 android:id="@+id/controller3D"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

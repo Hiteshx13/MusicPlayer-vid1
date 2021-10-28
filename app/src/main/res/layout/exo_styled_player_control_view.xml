@@ -87,7 +87,8 @@
 
   </FrameLayout>
 
-  <code.name.monkey.retromusic.videoplayer.player.CustomDefaultTimeBar android:id="@+id/exo_progress"
+  <code.psm.music.player.videoplayer.player.CustomDefaultTimeBar
+      android:id="@+id/exo_progress"
       android:layout_width="match_parent"
       android:layout_height="@dimen/exo_styled_progress_layout_height"
       android:layout_gravity="bottom"

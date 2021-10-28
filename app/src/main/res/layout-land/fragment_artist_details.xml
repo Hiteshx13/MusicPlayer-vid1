@@ -76,7 +76,7 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <code.name.monkey.retromusic.views.BaselineGridTextView
+                <code.psm.music.player.views.BaselineGridTextView
                     android:id="@+id/artistTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     tools:ignore="MissingPrefix"
                     tools:text="Title" />
 
-                <code.name.monkey.retromusic.views.BaselineGridTextView
+                <code.psm.music.player.views.BaselineGridTextView
                     android:id="@+id/text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

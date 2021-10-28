@@ -2,11 +2,11 @@
     <shortcut
         android:shortcutId="videos"
         android:enabled="true"
-        android:icon="@drawable/shortcut_videos"
+        android:icon="@drawable/shortcut_videos_foreground"
         android:shortcutShortLabel="@string/shortcut_videos">
         <intent
-            android:action="com.brouken.player.action.SHORTCUT_VIDEOS"
-            android:targetPackage="com.brouken.player"
-            android:targetClass="com.brouken.player.PlayerActivity" />
+            android:action="code.psm.music.player.videoplayer.player.action.SHORTCUT_VIDEOS"
+            android:targetPackage="code.psm.music.player.videoplayer.player"
+            android:targetClass="code.psm.music.player.videoplayer.player.PlayerActivity" />
     </shortcut>
 </shortcuts>

@@ -98,34 +98,34 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/generalSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_theme_palette"
-            app:settingListItemIconColor="@color/md_deep_purple_A400"
+            app:settingListItemIconColor="@color/color_splash"
             app:settingListItemText="@string/general_settings_summary"
             app:settingListItemTitle="@string/general_settings_title" />
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/nowPlayingSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_play_circle_filled"
-            app:settingListItemIconColor="@color/md_deep_purple_A400"
+            app:settingListItemIconColor="@color/color_splash"
             app:settingListItemText="@string/now_playing_summary"
             app:settingListItemTitle="@string/now_playing" />
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/audioSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:settingListItemIcon="@drawable/ic_volume_up"
-            app:settingListItemIconColor="@color/md_deep_purple_A400"
+            app:settingListItemIconColor="@color/color_splash"
             app:settingListItemText="@string/audio_settings_summary"
             app:settingListItemTitle="@string/pref_header_audio" />
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/personalizeSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
             app:settingListItemTitle="@string/personalize" />
 
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/imageSettings"
             android:layout_width="match_parent"
             android:visibility="gone"
@@ -146,7 +146,7 @@
             app:settingListItemText="@string/image_settings_summary"
             app:settingListItemTitle="@string/pref_header_images" />
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/notificationSettings"
             android:layout_width="match_parent"
             android:visibility="gone"
@@ -156,7 +156,7 @@
             app:settingListItemText="@string/notification_settings_summary"
             app:settingListItemTitle="@string/notification" />
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/otherSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
             app:settingListItemTitle="@string/others" />
 
 
-        <code.name.monkey.retromusic.views.SettingListItemView
+        <code.psm.music.player.views.SettingListItemView
             android:id="@+id/aboutSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

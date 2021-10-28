@@ -53,10 +53,10 @@
         android:id="@+id/action_share"
         android:orderInCategory="7"
         android:title="@string/action_share" />
-    <item
-        android:id="@+id/action_set_as_ringtone"
-        android:orderInCategory="8"
-        android:title="@string/action_set_as_ringtone" />
+<!--    <item-->
+<!--        android:id="@+id/action_set_as_ringtone"-->
+<!--        android:orderInCategory="8"-->
+<!--        android:title="@string/action_set_as_ringtone" />-->
     <item
         android:id="@+id/action_clear_playing_queue"
         android:orderInCategory="9"
@@ -75,8 +75,8 @@
         android:orderInCategory="12"
         android:title="@string/equalizer"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/action_delete_from_device"
-        android:orderInCategory="13"
-        android:title="@string/action_delete_from_device" />
+<!--    <item-->
+<!--        android:id="@+id/action_delete_from_device"-->
+<!--        android:orderInCategory="13"-->
+<!--        android:title="@string/action_delete_from_device" />-->
 </menu>

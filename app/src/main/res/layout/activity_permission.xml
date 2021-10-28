@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface">
 
-    <code.name.monkey.retromusic.views.BaselineGridTextView
+    <code.psm.music.player.views.BaselineGridTextView
         android:id="@+id/appNameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="32dp"
         android:text="@string/app_name"
         android:textAppearance="@style/TextViewHeadline5"
-        android:textColor="?android:attr/textColorPrimary"
+        android:textColor="@color/color_splash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appNameText" />
 
-    <code.name.monkey.retromusic.views.PermissionItem
+    <code.psm.music.player.views.PermissionItem
         android:id="@+id/storagePermission"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -41,11 +41,13 @@
         app:permissionTitleNumber="1"
         app:permissionTitleSubTitle="@string/permission_summary" />
 
-    <code.name.monkey.retromusic.views.PermissionItem
+    <code.psm.music.player.views.PermissionItem
         android:id="@+id/audioPermission"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:foregroundTint="@color/color_splash"
+        android:backgroundTint="@color/color_splash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/storagePermission"
@@ -56,16 +58,19 @@
         app:permissionTitleSubTitle="@string/ringtone_summary"
         tools:visibility="visible" />
 
-    <com.google.android.material.button.MaterialButton
+    <code.psm.music.player.views.PermissionItem
         android:id="@+id/finish"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:paddingVertical="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@color/color_splash"
         android:text="Let's go"
         android:textAppearance="@style/TextViewButton"
         app:cornerRadius="8dp"
+        app:backgroundTint="@color/color_splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
