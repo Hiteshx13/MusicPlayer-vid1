@@ -32,6 +32,7 @@
             android:key="accent_color"
             android:layout="@layout/list_item_color_view"
             android:persistent="false"
+            app:isPreferenceVisible="false"
             android:summary="@string/accent_color_desc"
             android:title="@string/accent_color"
             app:icon="@drawable/ic_colorize" />

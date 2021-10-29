@@ -10,9 +10,10 @@
         android:id="@+id/lyrics_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/design_default_color_primary"
+        android:backgroundTint="@color/color_splash"
         android:hint="@string/paste_lyrics_here"
         android:padding="30dp"
+
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/negativeButton"
         app:layout_constraintEnd_toEndOf="parent"

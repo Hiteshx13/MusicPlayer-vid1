@@ -26,6 +26,11 @@
     <color name="card_shadow_2">#dddddd</color>
     <color name="color_blue">#31385E</color>
     <color name="color_splash">#e85707</color>
+
+    <color name="colorPrimary">#e85707</color>
+    <color name="colorPrimaryDark">#e85707</color>
+    <color name="colorAccent">#C8794D</color>
+
     <color name="color_transparent">#00000000</color>
     <color name="color_splash_light">#C8794D</color>
     <color name="progress_gray">#FFD8D8D8</color>

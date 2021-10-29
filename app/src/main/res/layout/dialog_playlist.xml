@@ -12,6 +12,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/color_splash"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/color_splash"
         app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -22,6 +25,8 @@
             android:hint="@string/playlist_name_empty"
             android:inputType="textPersonName|textCapWords|text"
             android:padding="16dp"
+            android:backgroundTint="@color/color_splash"
+            android:textColor="@color/color_splash"
             android:textAppearance="@style/TextViewNormal" />
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>
