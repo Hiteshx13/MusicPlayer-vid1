@@ -19,27 +19,28 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         applicationId "code.psm.music.player"
-        versionCode 10520
-        versionName '5.0.0' + "_" + getDate()
+        versionCode 4
+        versionName '4.0.0' + "_" + getDate()
 
         buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties('../public.properties'), 'GOOGLE_PLAY_LICENSE_KEY')}\"")
     }
-    signingConfigs {
-        release {
-            Properties properties = getProperties('retro.properties')
-            storeFile file(getProperty(properties, 'storeFile'))
-            keyAlias getProperty(properties, 'keyAlias')
-            storePassword getProperty(properties, 'storePassword')
-            keyPassword getProperty(properties, 'keyPassword')
-        }
-    }
+//    signingConfigs {com.anjlab.android
+//        release {
+//            Properties properties = getProperties('retro.properties')
+//            storeFile file(getProperty(properties, 'storeFile'))
+//            keyAlias getProperty(properties, 'keyAlias')
+//            storePassword getProperty(properties, 'storePassword')
+//            keyPassword getProperty(properties, 'keyPassword')
+//        }
+//    }
+//
     buildTypes {
         release {
             //debuggable true
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
         debug {
 //            debuggable true
@@ -170,7 +171,7 @@ dependencies {
 
     implementation 'org.eclipse.mylyn.github:org.eclipse.egit.github.core:3.4.0.201406110918-r'
     implementation 'org.bitbucket.ijabz:jaudiotagger:2.2.5'
-    implementation 'com.anjlab.android.iab.v3:library:1.1.0'
+//    implementation 'com.anjlab.android.iab.v3:library:1.1.0'
     implementation 'com.r0adkll:slidableactivity:2.1.0'
     implementation 'com.heinrichreimersoftware:material-intro:2.0.0'
     implementation 'com.github.dhaval2404:imagepicker:1.7.1'

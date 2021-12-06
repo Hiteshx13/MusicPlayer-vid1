@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.ActivityCompat
 import code.psm.music.player.App
-import code.psm.music.player.activities.PurchaseActivity
 
 object PremiumShow {
     private const val PREF_NAME = "premium_show"
@@ -26,13 +25,7 @@ object PremiumShow {
             dateLaunched = System.currentTimeMillis()
             prefEditor.putLong(DATE_FIRST_LAUNCH, dateLaunched)
         }
-        if (System.currentTimeMillis() >= dateLaunched + 2 * 24 * 60 * 60 * 1000) {
-            ActivityCompat.startActivity(
-                context,
-                Intent(context, PurchaseActivity::class.java),
-                null
-            )
-        }
+
         prefEditor.apply()
     }
 }

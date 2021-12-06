@@ -32,7 +32,6 @@ import code.psm.music.player.activities.DriveModeActivity;
 import code.psm.music.player.activities.LicenseActivity;
 import code.psm.music.player.activities.LyricsActivity;
 import code.psm.music.player.activities.PlayingQueueActivity;
-import code.psm.music.player.activities.PurchaseActivity;
 import code.psm.music.player.activities.SupportDevelopmentActivity;
 import code.psm.music.player.activities.UserInfoActivity;
 import code.psm.music.player.activities.WhatsNewActivity;

@@ -14,39 +14,18 @@
  */
 package code.psm.music.player.activities
 
-import android.content.Intent
-import android.graphics.Paint
 import android.os.AsyncTask
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
-import androidx.annotation.LayoutRes
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import code.psm.music.appthemehelper.ThemeStore
 import code.psm.music.appthemehelper.util.ATHUtil
 import code.psm.music.appthemehelper.util.TintHelper
 import code.psm.music.appthemehelper.util.ToolbarContentTintHelper
-import code.psm.music.player.BuildConfig
 import code.psm.music.player.R
 import code.psm.music.player.activities.base.AbsBaseActivity
 import code.psm.music.player.databinding.ActivityDonationBinding
-import code.psm.music.player.extensions.textColorPrimary
-import code.psm.music.player.extensions.textColorSecondary
-import com.anjlab.android.iab.v3.BillingProcessor
-import com.anjlab.android.iab.v3.SkuDetails
-import com.anjlab.android.iab.v3.TransactionDetails
-import java.lang.ref.WeakReference
-import java.util.*
 
-class SupportDevelopmentActivity : AbsBaseActivity(), BillingProcessor.IBillingHandler {
+class SupportDevelopmentActivity : AbsBaseActivity() {
 
     lateinit var binding: ActivityDonationBinding
 
@@ -56,7 +35,7 @@ class SupportDevelopmentActivity : AbsBaseActivity(), BillingProcessor.IBillingH
         private const val TEZ_REQUEST_CODE = 123
     }
 
-    var billingProcessor: BillingProcessor? = null
+    //    var billingProcessor: BillingProcessor? = null
     private var skuDetailsLoadAsyncTask: AsyncTask<*, *, *>? = null
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -69,7 +48,7 @@ class SupportDevelopmentActivity : AbsBaseActivity(), BillingProcessor.IBillingH
 
     fun donate(i: Int) {
         val ids = resources.getStringArray(DONATION_PRODUCT_IDS)
-        billingProcessor?.purchase(this, ids[i])
+//        billingProcessor?.purchase(this, ids[i])
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +63,7 @@ class SupportDevelopmentActivity : AbsBaseActivity(), BillingProcessor.IBillingH
 
         setupToolbar()
 
-        billingProcessor = BillingProcessor(this, BuildConfig.GOOGLE_PLAY_LICENSING_KEY, this)
+//        billingProcessor = BillingProcessor(this, BuildConfig.GOOGLE_PLAY_LICENSING_KEY, this)
         TintHelper.setTint(binding.progress, ThemeStore.accentColor(this))
         binding.donation.setTextColor(ThemeStore.accentColor(this))
     }
@@ -96,176 +75,176 @@ class SupportDevelopmentActivity : AbsBaseActivity(), BillingProcessor.IBillingH
         setSupportActionBar(binding.toolbar)
     }
 
-    override fun onBillingInitialized() {
-        loadSkuDetails()
-    }
+//    override fun onBillingInitialized() {
+//        loadSkuDetails()
+//    }
 
-    private fun loadSkuDetails() {
-        if (skuDetailsLoadAsyncTask != null) {
-            skuDetailsLoadAsyncTask!!.cancel(false)
-        }
-        skuDetailsLoadAsyncTask = SkuDetailsLoadAsyncTask(this).execute()
-    }
+//    private fun loadSkuDetails() {
+//        if (skuDetailsLoadAsyncTask != null) {
+//            skuDetailsLoadAsyncTask!!.cancel(false)
+//        }
+//        skuDetailsLoadAsyncTask = SkuDetailsLoadAsyncTask(this).execute()
+//    }
 
-    override fun onProductPurchased(productId: String, details: TransactionDetails?) {
-        // loadSkuDetails();
-        Toast.makeText(this, R.string.thank_you, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onBillingError(errorCode: Int, error: Throwable?) {
-        Log.e(TAG, "Billing error: code = $errorCode", error)
-    }
-
-    override fun onPurchaseHistoryRestored() {
-        // loadSkuDetails();
-//        Toast.makeText(this, R.string.restored_previous_purchases, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (!billingProcessor!!.handleActivityResult(requestCode, resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data)
-        }
-        if (requestCode == TEZ_REQUEST_CODE) {
-            // Process based on the data in response.
-            // Log.d("result", data!!.getStringExtra("Status"))
-        }
-    }
-
-    override fun onDestroy() {
-        billingProcessor?.release()
-        skuDetailsLoadAsyncTask?.cancel(true)
-        super.onDestroy()
-    }
+//    override fun onProductPurchased(productId: String, details: TransactionDetails?) {
+//        // loadSkuDetails();
+//        Toast.makeText(this, R.string.thank_you, Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onBillingError(errorCode: Int, error: Throwable?) {
+//        Log.e(TAG, "Billing error: code = $errorCode", error)
+//    }
+//
+//    override fun onPurchaseHistoryRestored() {
+//        // loadSkuDetails();
+////        Toast.makeText(this, R.string.restored_previous_purchases, Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        if (!billingProcessor!!.handleActivityResult(requestCode, resultCode, data)) {
+//            super.onActivityResult(requestCode, resultCode, data)
+//        }
+//        if (requestCode == TEZ_REQUEST_CODE) {
+//            // Process based on the data in response.
+//            // Log.d("result", data!!.getStringExtra("Status"))
+//        }
+//    }
+//
+//    override fun onDestroy() {
+//        billingProcessor?.release()
+//        skuDetailsLoadAsyncTask?.cancel(true)
+//        super.onDestroy()
+//    }
 }
 
-private class SkuDetailsLoadAsyncTask(supportDevelopmentActivity: SupportDevelopmentActivity) :
-    AsyncTask<Void, Void, List<SkuDetails>>() {
+//private class SkuDetailsLoadAsyncTask(supportDevelopmentActivity: SupportDevelopmentActivity) :
+//    AsyncTask<Void, Void, List<SkuDetails>>() {
+//
+//    private val weakReference: WeakReference<SupportDevelopmentActivity> = WeakReference(
+//        supportDevelopmentActivity
+//    )
+//
+//    override fun onPreExecute() {
+//        super.onPreExecute()
+//        val supportDevelopmentActivity = weakReference.get() ?: return
+//
+//        supportDevelopmentActivity.binding.progressContainer.visibility = View.VISIBLE
+//        supportDevelopmentActivity.binding.recyclerView.visibility = View.GONE
+//    }
+//
+//    override fun doInBackground(vararg params: Void): List<SkuDetails>? {
+//        val dialog = weakReference.get()
+//        if (dialog != null) {
+//            val ids =
+//                dialog.resources.getStringArray(SupportDevelopmentActivity.DONATION_PRODUCT_IDS)
+//            return dialog.billingProcessor!!.getPurchaseListingDetails(ArrayList(Arrays.asList(*ids)))
+//        }
+//        cancel(false)
+//        return null
+//    }
+//
+//    override fun onPostExecute(skuDetails: List<SkuDetails>?) {
+//        super.onPostExecute(skuDetails)
+//        val dialog = weakReference.get() ?: return
+//
+//        if (skuDetails == null || skuDetails.isEmpty()) {
+//            dialog.binding.progressContainer.visibility = View.GONE
+//            return
+//        }
+//
+//        dialog.binding.progressContainer.visibility = View.GONE
+//        dialog.binding.recyclerView.apply {
+//            itemAnimator = DefaultItemAnimator()
+//            layoutManager = GridLayoutManager(dialog, 2)
+//            adapter = SkuDetailsAdapter(dialog, skuDetails)
+//            visibility = View.VISIBLE
+//        }
+//    }
+//}
 
-    private val weakReference: WeakReference<SupportDevelopmentActivity> = WeakReference(
-        supportDevelopmentActivity
-    )
+//class SkuDetailsAdapter(
+//    private var donationsDialog: SupportDevelopmentActivity,
+//    objects: List<SkuDetails>
+//) : RecyclerView.Adapter<SkuDetailsAdapter.ViewHolder>() {
+//
+//    private var skuDetailsList: List<SkuDetails> = ArrayList()
+//
+//    init {
+//        skuDetailsList = objects
+//    }
+//
+//    private fun getIcon(position: Int): Int {
+//        return when (position) {
+//            0 -> R.drawable.ic_cookie
+//            1 -> R.drawable.ic_take_away
+//            2 -> R.drawable.ic_take_away_coffe
+//            3 -> R.drawable.ic_beer
+//            4 -> R.drawable.ic_fast_food_meal
+//            5 -> R.drawable.ic_popcorn
+//            6 -> R.drawable.ic_card_giftcard
+//            7 -> R.drawable.ic_food_croissant
+//            else -> R.drawable.ic_card_giftcard
+//        }
+//    }
+//
+//    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
+//        return ViewHolder(
+//            LayoutInflater.from(donationsDialog).inflate(
+//                LAYOUT_RES_ID,
+//                viewGroup,
+//                false
+//            )
+//        )
+//    }
 
-    override fun onPreExecute() {
-        super.onPreExecute()
-        val supportDevelopmentActivity = weakReference.get() ?: return
+//    override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
+//        val skuDetails = skuDetailsList[i]
+//        viewHolder.title.text = skuDetails.title.replace("Music Player - MP3 Player - Retro", "")
+//            .trim { it <= ' ' }
+//        viewHolder.text.text = skuDetails.description
+//        viewHolder.text.visibility = View.GONE
+//        viewHolder.price.text = skuDetails.priceText
+//        viewHolder.image.setImageResource(getIcon(i))
+//
+//        val purchased = donationsDialog.billingProcessor!!.isPurchased(skuDetails.productId)
+//        val titleTextColor = if (purchased) ATHUtil.resolveColor(
+//            donationsDialog,
+//            android.R.attr.textColorHint
+//        ) else donationsDialog.textColorPrimary()
+//        val contentTextColor =
+//            if (purchased) titleTextColor else donationsDialog.textColorSecondary()
+//
+//        viewHolder.title.setTextColor(titleTextColor)
+//        viewHolder.text.setTextColor(contentTextColor)
+//        viewHolder.price.setTextColor(titleTextColor)
+//
+//        strikeThrough(viewHolder.title, purchased)
+//        strikeThrough(viewHolder.text, purchased)
+//        strikeThrough(viewHolder.price, purchased)
+//
+//        viewHolder.itemView.setOnTouchListener { _, _ -> purchased }
+//        viewHolder.itemView.setOnClickListener { donationsDialog.donate(i) }
+//    }
+//
+//    override fun getItemCount(): Int {
+//        return skuDetailsList.size
+//    }
 
-        supportDevelopmentActivity.binding.progressContainer.visibility = View.VISIBLE
-        supportDevelopmentActivity.binding.recyclerView.visibility = View.GONE
-    }
+//    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+//        var title: TextView = view.findViewById(R.id.itemTitle)
+//        var text: TextView = view.findViewById(R.id.itemText)
+//        var price: TextView = view.findViewById(R.id.itemPrice)
+//        var image: AppCompatImageView = view.findViewById(R.id.itemImage)
+//    }
 
-    override fun doInBackground(vararg params: Void): List<SkuDetails>? {
-        val dialog = weakReference.get()
-        if (dialog != null) {
-            val ids =
-                dialog.resources.getStringArray(SupportDevelopmentActivity.DONATION_PRODUCT_IDS)
-            return dialog.billingProcessor!!.getPurchaseListingDetails(ArrayList(Arrays.asList(*ids)))
-        }
-        cancel(false)
-        return null
-    }
-
-    override fun onPostExecute(skuDetails: List<SkuDetails>?) {
-        super.onPostExecute(skuDetails)
-        val dialog = weakReference.get() ?: return
-
-        if (skuDetails == null || skuDetails.isEmpty()) {
-            dialog.binding.progressContainer.visibility = View.GONE
-            return
-        }
-
-        dialog.binding.progressContainer.visibility = View.GONE
-        dialog.binding.recyclerView.apply {
-            itemAnimator = DefaultItemAnimator()
-            layoutManager = GridLayoutManager(dialog, 2)
-            adapter = SkuDetailsAdapter(dialog, skuDetails)
-            visibility = View.VISIBLE
-        }
-    }
-}
-
-class SkuDetailsAdapter(
-    private var donationsDialog: SupportDevelopmentActivity,
-    objects: List<SkuDetails>
-) : RecyclerView.Adapter<SkuDetailsAdapter.ViewHolder>() {
-
-    private var skuDetailsList: List<SkuDetails> = ArrayList()
-
-    init {
-        skuDetailsList = objects
-    }
-
-    private fun getIcon(position: Int): Int {
-        return when (position) {
-            0 -> R.drawable.ic_cookie
-            1 -> R.drawable.ic_take_away
-            2 -> R.drawable.ic_take_away_coffe
-            3 -> R.drawable.ic_beer
-            4 -> R.drawable.ic_fast_food_meal
-            5 -> R.drawable.ic_popcorn
-            6 -> R.drawable.ic_card_giftcard
-            7 -> R.drawable.ic_food_croissant
-            else -> R.drawable.ic_card_giftcard
-        }
-    }
-
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(donationsDialog).inflate(
-                LAYOUT_RES_ID,
-                viewGroup,
-                false
-            )
-        )
-    }
-
-    override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        val skuDetails = skuDetailsList[i]
-        viewHolder.title.text = skuDetails.title.replace("Music Player - MP3 Player - Retro", "")
-            .trim { it <= ' ' }
-        viewHolder.text.text = skuDetails.description
-        viewHolder.text.visibility = View.GONE
-        viewHolder.price.text = skuDetails.priceText
-        viewHolder.image.setImageResource(getIcon(i))
-
-        val purchased = donationsDialog.billingProcessor!!.isPurchased(skuDetails.productId)
-        val titleTextColor = if (purchased) ATHUtil.resolveColor(
-            donationsDialog,
-            android.R.attr.textColorHint
-        ) else donationsDialog.textColorPrimary()
-        val contentTextColor =
-            if (purchased) titleTextColor else donationsDialog.textColorSecondary()
-
-        viewHolder.title.setTextColor(titleTextColor)
-        viewHolder.text.setTextColor(contentTextColor)
-        viewHolder.price.setTextColor(titleTextColor)
-
-        strikeThrough(viewHolder.title, purchased)
-        strikeThrough(viewHolder.text, purchased)
-        strikeThrough(viewHolder.price, purchased)
-
-        viewHolder.itemView.setOnTouchListener { _, _ -> purchased }
-        viewHolder.itemView.setOnClickListener { donationsDialog.donate(i) }
-    }
-
-    override fun getItemCount(): Int {
-        return skuDetailsList.size
-    }
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var title: TextView = view.findViewById(R.id.itemTitle)
-        var text: TextView = view.findViewById(R.id.itemText)
-        var price: TextView = view.findViewById(R.id.itemPrice)
-        var image: AppCompatImageView = view.findViewById(R.id.itemImage)
-    }
-
-    companion object {
-        @LayoutRes
-        private val LAYOUT_RES_ID = R.layout.item_donation_option
-
-        private fun strikeThrough(textView: TextView, strikeThrough: Boolean) {
-            textView.paintFlags =
-                if (strikeThrough) textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-                else textView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
-        }
-    }
-}
+//    companion object {
+//        @LayoutRes
+//        private val LAYOUT_RES_ID = R.layout.item_donation_option
+//
+//        private fun strikeThrough(textView: TextView, strikeThrough: Boolean) {
+//            textView.paintFlags =
+//                if (strikeThrough) textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+//                else textView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+//        }
+//    }
+//}
